@@ -1,7 +1,9 @@
+// ignore_for_file: file_names, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 import 'package:quizapp/Widgets/widgets.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import '../Data/Quizdata.dart';
+import '../Data/QuizData.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Quizdata quizdata = Quizdata();
+  var quizdata = Quizdata();
   List<Widget> checkAnswer = [];
   void checkQuestion(bool checkit) {
     if (quizdata.isFinished() == true) {
@@ -32,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       checkAnswer = [];
       quizdata.reset();
     } else {
-      if (quizdata.answer() == checkit) {
+      if (quizdata.GetAnswer() == checkit) {
         checkAnswer.add(const Icon(Icons.check));
       } else {
         checkAnswer.add(const Icon(Icons.cancel));

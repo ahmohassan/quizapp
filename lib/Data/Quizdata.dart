@@ -31,7 +31,7 @@ class Quizdata {
     return _Questions[_StartQuestion].question;
   }
 
-  bool answer() => _Questions[_StartQuestion].answer;
+  bool GetAnswer() => _Questions[_StartQuestion].answer;
   bool isFinished() {
     if (_StartQuestion >= _Questions.length - 1) {
       print('Now returning true');
